@@ -3,6 +3,7 @@ package com.example.android.styletransfer;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Environment;
@@ -23,6 +24,8 @@ public class ChooseActivity extends AppCompatActivity {
 
     private ImageView temp;
     private Button okbutton;
+    private int clicknum = 1;
+    public Bitmap bitmap;
 
     private static final int PHOTO_REQUEST_CAREMA = 1;// 拍照
     private static final int PHOTO_REQUEST_GALLERY = 2;// 从相册中选择
@@ -58,14 +61,20 @@ public class ChooseActivity extends AppCompatActivity {
         okbutton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent=new Intent(ChooseActivity.this,StyleActivity.class);
-                startActivity(intent);
+                if(clicknum == 1)
+                    Toast.makeText(ChooseActivity.this, "请先选择一张照片！", Toast.LENGTH_SHORT).show();
+                else {
+                    Intent intent = new Intent(ChooseActivity.this, StyleActivity.class);
+                    intent.putExtra("bitmap",bitmap);
+                    startActivity(intent);
+                }
             }
         });
     }
 
     public void gallery(View view) {
         // 激活系统图库，选择一张图片
+        clicknum++;
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
         // 开启一个带有返回值的Activity，请求码为PHOTO_REQUEST_GALLERY
@@ -79,6 +88,7 @@ public class ChooseActivity extends AppCompatActivity {
             Uri uri = Uri.fromFile(tempFile);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
         }
+        clicknum++;
         // 开启一个带有返回值的activity
         startActivityForResult(intent, PHOTO_REQUEST_CAREMA);
     }
@@ -130,7 +140,7 @@ public class ChooseActivity extends AppCompatActivity {
         } else if (requestCode == PHOTO_REQUEST_CUT) {
             // 从剪切图片返回的数据
             if (data != null) {
-                Bitmap bitmap = data.getParcelableExtra("data");
+                bitmap = data.getParcelableExtra("data");
                 this.temp.setImageBitmap(bitmap);
             }
             try {
