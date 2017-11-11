@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBlack"
     tools:context="com.example.android.styletransfer.ChooseActivity">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/back2"
         android:orientation="vertical">
 
         <ImageView
@@ -21,7 +23,7 @@
             android:adjustViewBounds="true"
             android:padding="10dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/background" />
+            android:src="@drawable/back3" />
 
         <View
             android:layout_height="1dp"
@@ -29,7 +31,7 @@
             android:background="@color/colorPink"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp" />
-        
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,7 +56,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
-                        android:paddingRight="-18dp"/>
+                        android:paddingRight="-18dp" />
 
                     <ImageView
                         android:src="@drawable/folder"
@@ -63,7 +65,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:layout_margin="10dp"
-                        android:paddingLeft="-18dp"/>
+                        android:paddingLeft="-18dp" />
                 </LinearLayout>
 
                 <Button
@@ -75,10 +77,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/shape"
+                    android:background="@drawable/select"
                     android:text="从相册中选择"
-                    android:textColor="@color/colorChoice3"
-                    android:textSize="42px"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="60px"
                     android:layout_weight="1"
                     android:onClick="gallery"/>
             </LinearLayout>
@@ -96,10 +98,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/shape"
-                    android:text="选好了！"
-                    android:textColor="@color/colorChoice3"
-                    android:textSize="42px"
+                    android:background="@drawable/select"
+                    android:text="选好了"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="60px"
                     android:layout_weight="1"/>
 
                 <Button
@@ -108,10 +110,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/shape"
-                    android:text="拍一张！"
-                    android:textColor="@color/colorChoice3"
-                    android:textSize="42px"
+                    android:background="@drawable/select"
+                    android:text="拍一张"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="60px"
                     android:layout_weight="1"
                     android:onClick="camera"/>
 

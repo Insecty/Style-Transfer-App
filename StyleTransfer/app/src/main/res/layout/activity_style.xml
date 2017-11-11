@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBlack"
     tools:context="com.example.android.styletransfer.StyleActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/back2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,15 +47,16 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="数值"
+                    android:text="强度"
+                    android:textColor="@color/colorAccent"
                     android:layout_gravity="center_vertical"/>
             </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorAccent"
-                android:text="__________基础滤镜__________"
+                android:textColor="@color/colorPink"
+                android:text="——————基础滤镜——————"
                 android:gravity="center"/>
 
             <LinearLayout
@@ -81,47 +84,51 @@
                         android:layout_gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <ImageButton
-                            android:id="@+id/button1"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/camera"
-                            android:scaleType="centerInside"/>
+                        <Button
+                            android:id="@+id/light"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="5dp"
+                            android:scaleType="centerInside"
+                            android:background="@drawable/style"
+                            android:text="亮度"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="50px" />
 
-                        <ImageButton
-                            android:id="@+id/button2"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/camera"
-                            android:scaleType="centerInside"/>
+                        <Button
+                            android:id="@+id/contrast"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="5dp"
+                            android:scaleType="centerInside"
+                            android:background="@drawable/style"
+                            android:text="对比度"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="50px"/>
 
-                        <ImageButton
-                            android:id="@+id/button3"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/camera"
-                            android:scaleType="centerInside"/>
+                        <Button
+                            android:id="@+id/saturation"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="5dp"
+                            android:scaleType="centerInside"
+                            android:background="@drawable/style"
+                            android:text="饱和度"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="50px"/>
 
-                        <ImageButton
-                            android:id="@+id/button4"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/camera"
-                            android:scaleType="centerInside"/>
 
-                        <ImageButton
-                            android:id="@+id/button5"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/camera"
-                            android:scaleType="centerInside"/>
+                        <Button
+                            android:id="@+id/baw"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="5dp"
+                            android:scaleType="centerInside"
+                            android:background="@drawable/style"
+                            android:text="黑白"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="50px"/>
 
-                        <ImageButton
-                            android:id="@+id/button6"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/camera"
-                            android:scaleType="centerInside"/>
 
                     </LinearLayout>
 
@@ -146,8 +153,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorAccent"
-                android:text="__________风格转换__________"
+                android:textColor="@color/colorPink"
+                android:text="——————风格转换——————"
                 android:gravity="center"/>
 
             <LinearLayout
