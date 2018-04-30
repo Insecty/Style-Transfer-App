@@ -285,4 +285,15 @@ public class StyleActivity extends AppCompatActivity {
         });
     }
 
+    public void gosave(View view){
+        Intent intent = new Intent(StyleActivity.this, SaveActivity.class);
+        intent.putExtra("origin",bitmap);
+        intent.putExtra("result",interbitmap);
+        startActivity(intent);
+    }
+
+    public void starry(View view){ // style: Starry Night
+
+    }
+
 }
