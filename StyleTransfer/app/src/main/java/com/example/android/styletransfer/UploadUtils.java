@@ -177,6 +177,8 @@ public class UploadUtils {
             while ((ch = in.read()) != -1) {
                 sb2.append((char) ch);
             }
+        }else{
+            return new String("NoConnection");
         }
         outStream.close();
         conn.disconnect();

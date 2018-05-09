@@ -5,7 +5,7 @@ from flask import request
 from werkzeug import secure_filename
 
 app = Flask(__name__)
-UPLOAD_FOLDER = '.\img'
+UPLOAD_FOLDER = './img'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 ALLOWED_EXTENSIONS = set(['png','jpg','JPG','PNG','jpeg','JPEG'])
 

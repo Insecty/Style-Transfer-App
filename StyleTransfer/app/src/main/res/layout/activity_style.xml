@@ -10,7 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/back2">
+        android:background="@drawable/back5">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
                 android:adjustViewBounds="true"
                 android:padding="10dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/background" />
+                android:src="@drawable/back6" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,8 +37,9 @@
                     android:id="@+id/seekbar"
                     android:layout_width="0dp"
                     android:layout_weight="5"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content"
-                    android:thumb="@drawable/thumb"
+                    android:thumb="@drawable/thumb2"
                     android:max="100"
                     android:progress="0"/>
 
@@ -48,7 +49,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="强度"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorChoice3"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>
@@ -56,7 +57,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPink"
+                android:textColor="@color/colorChoice3"
                 android:text="——————基础滤镜——————"
                 android:gravity="center"/>
 
@@ -87,63 +88,63 @@
 
                         <Button
                             android:id="@+id/origin"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="35dp"
                             android:layout_margin="5dp"
                             android:scaleType="centerInside"
-                            android:background="@drawable/style"
+                            android:background="@drawable/shape"
                             android:text="原图"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="50px"
+                            android:textColor="@color/colorChoice3"
+                            android:textSize="25px"
                             android:onClick="origin"/>
 
                         <Button
                             android:id="@+id/light"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="35dp"
                             android:layout_margin="5dp"
                             android:scaleType="centerInside"
-                            android:background="@drawable/style"
+                            android:background="@drawable/shape"
                             android:text="亮度"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="50px"
+                            android:textColor="@color/colorChoice3"
+                            android:textSize="25px"
                             android:onClick="light"/>
 
                         <Button
                             android:id="@+id/contrast"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="35dp"
                             android:layout_margin="5dp"
                             android:scaleType="centerInside"
-                            android:background="@drawable/style"
+                            android:background="@drawable/shape"
                             android:text="对比度"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="50px"
+                            android:textColor="@color/colorChoice3"
+                            android:textSize="25px"
                             android:onClick="contrast"/>
 
                         <Button
                             android:id="@+id/saturation"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="35dp"
                             android:layout_margin="5dp"
                             android:scaleType="centerInside"
-                            android:background="@drawable/style"
+                            android:background="@drawable/shape"
                             android:text="饱和度"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="50px"
+                            android:textColor="@color/colorChoice3"
+                            android:textSize="25px"
                             android:onClick="saturation"/>
 
 
                         <Button
                             android:id="@+id/baw"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="50dp"
+                            android:layout_height="35dp"
                             android:layout_margin="5dp"
                             android:scaleType="centerInside"
-                            android:background="@drawable/style"
+                            android:background="@drawable/shape"
                             android:text="黑白"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="50px"
+                            android:textColor="@color/colorChoice3"
+                            android:textSize="25px"
                             android:onClick="baw"/>
 
 
@@ -170,7 +171,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPink"
+                android:textColor="@color/colorChoice3"
                 android:text="——————风格转换——————"
                 android:gravity="center"/>
 
@@ -219,10 +220,11 @@
                             android:layout_height="70dp"
                             android:background="@drawable/style2"
                             android:layout_marginRight="20dp"
-                            android:text="Style2"
+                            android:text="Wreck"
                             android:textSize="10dp"
                             android:textColor="@color/colorChoice3"
                             android:paddingTop="47dp"
+                            android:onClick="wreck"
                             />
 
                         <Button
@@ -230,10 +232,11 @@
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:background="@drawable/style3"
-                            android:text="Style3"
+                            android:text="Wave"
                             android:textSize="10dp"
                             android:textColor="@color/colorChoice3"
                             android:paddingTop="47dp"
+                            android:onClick="wave"
                             />
 
 
@@ -253,14 +256,14 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:background="@drawable/select"
+                android:background="@drawable/shape"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:textColor="@color/colorAccent"
-                android:textSize="60px"
+                android:textColor="@color/colorChoice3"
+                android:textSize="35px"
                 android:text="D O N E"
                 android:onClick="gosave"/>
 

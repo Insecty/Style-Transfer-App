@@ -49,7 +49,7 @@ public class ChooseActivity extends AppCompatActivity {
     private File tempFile;
 
     private static final String TAG = "ChooseActivity";
-    private static final String REQUEST_URL = "http://10.180.163.147:5000/upload";
+    private static final String REQUEST_URL = "http://106.14.184.144:5000/upload";
     private Handler handler;
     private final Map<String, String> params = new HashMap<String, String>();
     private final Map<String, File> files = new HashMap<String, File>();
@@ -87,7 +87,7 @@ public class ChooseActivity extends AppCompatActivity {
                     // 向服务器上传原图和裁剪后的图片
                     // origin img
                     params.clear();
-                    files.put("file", imgfile.getFile());
+                    files.put("file", imgfile.getCroppedFile());
 
                     handler = new Handler();
                     handler.post(new UploadRunnable());
@@ -105,9 +105,14 @@ public class ChooseActivity extends AppCompatActivity {
         public void run() {
             try {
                 final String request = UploadUtils.post(REQUEST_URL, params, files);
-                files.clear();
-                files.put("file", imgfile.getCroppedFile());
-                final String req = UploadUtils.post(REQUEST_URL, params, files);
+                if(request == "NoConnection"){
+                    Toast.makeText(ChooseActivity.this, "失去服务器连接！", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(ChooseActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+                //files.clear();
+                //files.put("file", imgfile.getCroppedFile());
+                //final String req = UploadUtils.post(REQUEST_URL, params, files);
               //  Toast.makeText(ChooseActivity.this, request, Toast.LENGTH_LONG).show();
             }catch (IOException e){
                 e.printStackTrace();

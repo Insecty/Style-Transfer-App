@@ -3,6 +3,7 @@ package com.example.android.styletransfer;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,12 @@ import android.util.Log;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Button;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+
 
 public class StyleActivity extends AppCompatActivity {
 
@@ -33,6 +40,8 @@ public class StyleActivity extends AppCompatActivity {
     private Bitmap srcBitmap; // 每次修改后的原图;
     private TextView seekbarnum; // 进度条数值
     public int size;
+
+    private Bitmap style1 = null, style2 = null, style3 = null;
 
     private Resources resources;
     int selectcolor;
@@ -67,7 +76,7 @@ public class StyleActivity extends AppCompatActivity {
 
         resources = getBaseContext().getResources();
         selectcolor = resources.getColor(R.color.colorYellow);
-        unselectcolor = resources.getColor(R.color.colorAccent);
+        unselectcolor = resources.getColor(R.color.colorChoice3);
 
     }
 
@@ -294,6 +303,74 @@ public class StyleActivity extends AppCompatActivity {
 
     public void starry(View view){ // style: Starry Night
 
+        if(style1 == null)
+            style1 = getBitmapFromServer("http://106.14.184.144:5000/img/s1");
+        else
+            temp.setImageBitmap(style1);
+
+        interbitmap = style1;
+        srcBitmap = style1;
+
     }
 
+    public void wreck(View view){ // style: Shipwreck
+        if(style2 == null)
+            style2  = getBitmapFromServer("http://106.14.184.144:5000/img/s2");
+        else
+            temp.setImageBitmap(style2);
+
+        interbitmap = style2;
+        srcBitmap = style2;
+
+    }
+
+    public void wave(View view){ // style: Wave
+        if(style3 == null)
+            style3 = getBitmapFromServer("http://106.14.184.144:5000/img/s3");
+        else
+            temp.setImageBitmap(style3);
+
+        interbitmap = style3;
+        srcBitmap = style3;
+
+    }
+
+    public Bitmap getBitmapFromServer(String imgPath){
+        Bitmap bm = null;
+        InputStream is = null;
+        BufferedInputStream bis = null;
+        try{
+            URL url = new URL(imgPath);
+            URLConnection connection = url.openConnection();
+            bis = new BufferedInputStream(connection.getInputStream());
+            bm = BitmapFactory.decodeStream(bis);
+            final Bitmap bml = bm;
+
+            if(bml != null) {
+                Handler handler = new Handler();
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        temp.setImageBitmap(bml);
+                    }
+                });
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            try{
+                if(bis!= null) {
+                    bis.close();
+                }
+                if(is != null){
+                    is.close();
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return bm;
+    }
 }

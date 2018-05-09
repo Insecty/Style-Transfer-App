@@ -3,16 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/colorBlack"
     tools:context="com.example.android.styletransfer.SaveActivity">
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/back2"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back5"
         android:orientation="vertical">
 
         <ImageView
@@ -23,23 +22,23 @@
             android:adjustViewBounds="true"
             android:padding="10dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/back3" />
+            android:src="@drawable/back6" />
         <ImageView
             android:id="@+id/originview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="15dp"
             android:adjustViewBounds="true"
-            android:padding="10dp"
             android:scaleType="centerCrop"
             android:onClick="showorigin"/>
 
         <View
             android:layout_height="1dp"
             android:layout_width="match_parent"
-            android:background="@color/colorPink"
+            android:background="@color/colorChoice3"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,10 +57,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/select"
+                    android:background="@drawable/shape"
                     android:text="原图对比"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="60px"
+                    android:textColor="@color/colorChoice3"
+                    android:textSize="40px"
                     android:layout_weight="1"
                     android:onClick="showorigin"/>
 
@@ -71,10 +70,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/select"
+                    android:background="@drawable/shape"
                     android:text="重新调色"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="60px"
+                    android:textColor="@color/colorChoice3"
+                    android:textSize="40px"
                     android:layout_weight="1"
                     android:onClick="again"/>
 
@@ -93,10 +92,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/select"
+                    android:background="@drawable/shape"
                     android:text="保存"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="60px"
+                    android:textColor="@color/colorChoice3"
+                    android:textSize="40px"
                     android:layout_weight="1"
                     android:onClick="save"/>
 
@@ -106,17 +105,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/select"
+                    android:background="@drawable/shape"
                     android:text="换一张"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="60px"
+                    android:textColor="@color/colorChoice3"
+                    android:textSize="40px"
                     android:layout_weight="1"
                     android:onClick="newpage"/>
-
             </LinearLayout>
-
         </LinearLayout>
-
-
     </LinearLayout>
     </ScrollView>
