@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Img Transport</title>
+		<script type="text/javascript">
+			function imgPreview(fileDom){
+				if(window.FileReader){
+					var reader = new FileReader();
+				}else{
+					alert("Not support img preview function!");
+				}
+
+				var file = fileDom.files[0];
+				var imageType = /^image\//;
+
+				if(!imageType.test(file.type)){
+					alert("select an img please.");
+					return;
+				}
+
+				reader.onload = function(e){
+					var img = document.getElementById("preview");
+					img.src = e.target.result;
+				};
+				reader.readAsDataURL(file);
+			}
+			function sub(){
+				document.form.submit();
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<form name="form" action="" method="post" enctype="multipart/form-data">
+			<input type="file" name="file" onchange="sub()" multiple="multiple" />
+			<input type="submit"/>
+		</form>
+		<img id="preview">
+	</body>
+</html>
