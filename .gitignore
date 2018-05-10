@@ -1,5 +1,10 @@
 server/imagenet-vgg-verydeep-19.mat
-StyleTransfer/
-StyleTransfer/*
-!StyleTransfer/app/src/main/java/com/example/android/styletransfer/
-!StyleTransfer/app/src/main/java/com/example/android/styletransfer/*
+StyleTransfer/gradle
+StyleTransfer/.idea
+*.xml
+*.iml
+*.bat
+*.gradle
+*.properties
+*.pro
+StyleTransfer/gradlew
