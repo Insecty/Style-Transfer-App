@@ -1,5 +1,6 @@
 *
 !.gitignore
+!Readme.md
 !StyleTransfer/app/src/main/java/com/example/android/styletransfer/*
 !server/*
 server/imagenet-vgg-verydeep-19.mat
