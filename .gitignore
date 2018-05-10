@@ -1,7 +1,6 @@
 server/imagenet-vgg-verydeep-19.mat
 StyleTransfer/gradle
 StyleTransfer/.idea
-*.xml
 *.iml
 *.bat
 *.gradle
