@@ -1,14 +1,23 @@
+## Running
+
+python init.py
+
+For a 512×512 pixel content file, 200 iterations take 5 seconds on a GTX 1080 Ti, 10 seconds on a Maxwell Titan X, or 10 minutes on an Intel Core i7-5930K. Using a GPU is highly recommended due to the huge speedup.
+
+
+
 ## Requirements
 
 ### Data Files
 
-- [Pre-trained VGG network](http://www.vlfeat.org/matconvnet/models/beta16/imagenet-vgg-verydeep-19.mat) (MD5 `8ee3263992981a1d26e73b3ca028a123`) - put it in the top level of this repository, or specify its location using the `--network` option.
+- [Pre-trained VGG network](http://www.vlfeat.org/matconvnet/models/beta16/imagenet-vgg-verydeep-19.mat) (MD5 `8ee3263992981a1d26e73b3ca028a123`) - put it in the "server" directory of this repository.
 
 ### Dependencies
 
-You can install Python dependencies using `pip install -r requirements.txt`, and it should just work. If you want to install the packages manually, here's a list:
+Please Install Python dependencies:
 
-- [TensorFlow](https://www.tensorflow.org/versions/master/get_started/os_setup.html#download-and-setup)
-- [NumPy](https://github.com/numpy/numpy/blob/master/INSTALL.rst.txt)
-- [SciPy](https://github.com/scipy/scipy/blob/master/INSTALL.rst.txt)
-- [Pillow](http://pillow.readthedocs.io/en/3.3.x/installation.html#installation)
+- TensorFlow
+- NumPy
+- SciPy
+- Pillow
+- flask
