@@ -1,0 +1,11 @@
+*.iml
+StyleTransfer/.gradle
+StyleTransfer/local.properties
+StyleTransfer/.idea/workspace.xml
+StyleTransfer/.idea/libraries
+StyleTransfer/.DS_Store
+StyleTransfer/build
+StyleTransfer/captures
+StyleTransfer/.externalNativeBuild
+server/imagenet-vgg-verydeep-19.mat
+

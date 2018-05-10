@@ -1,8 +1,10 @@
 import os
 from flask import Flask
 from flask import render_template
-from flask import request
+from flask import request, Response
 from werkzeug import secure_filename
+
+from neural_style import train
 
 app = Flask(__name__)
 UPLOAD_FOLDER = './img'
@@ -37,8 +39,19 @@ def index():
 				fname = secure_filename(f.filename)
 				print("Upload Status: " + fname)
 				f.save(os.path.join(app.config['UPLOAD_FOLDER'], fname))
+
+	# train the img ang get three style result
+	train("/root/server/img/cropped.jpg", "/root/server/img/style/style1.jpg", 200, "/root/server/img/s1.jpg")
+	train("/root/server/img/cropped.jpg", "/root/server/img/style/style2.jpg", 200, "/root/server/img/s2.jpg")
+	train("/root/server/img/cropped.jpg", "/root/server/img/style/style3.jpg", 200, "/root/server/img/s3.jpg")
+
 	return render_template('index.html')
 
+@app.route('/img/<imgid>', methods=['GET'])
+def returnImg(imgid):
+	image = file("img/{}.jpg".format(imgid))
+	resp = Response(image, mimetype="image/jpeg")
+	return resp
 
 if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0')
