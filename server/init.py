@@ -4,7 +4,7 @@ from flask import render_template
 from flask import request, Response
 from werkzeug import secure_filename
 
-from neural_style import train
+#  from neural_style import train
 
 app = Flask(__name__)
 UPLOAD_FOLDER = './img'
@@ -41,15 +41,18 @@ def index():
 				f.save(os.path.join(app.config['UPLOAD_FOLDER'], fname))
 
 	# train the img ang get three style result
-	train("/root/server/img/cropped.jpg", "/root/server/img/style/style1.jpg", 200, "/root/server/img/s1.jpg")
-	train("/root/server/img/cropped.jpg", "/root/server/img/style/style2.jpg", 200, "/root/server/img/s2.jpg")
-	train("/root/server/img/cropped.jpg", "/root/server/img/style/style3.jpg", 200, "/root/server/img/s3.jpg")
+	#train("/root/server/img/cropped.jpg", "/root/server/img/style/style1.jpg", 200, "/root/server/img/s1.jpg")
+	#train("/root/server/img/cropped.jpg", "/root/server/img/style/style2.jpg", 200, "/root/server/img/s2.jpg")
+	#train("/root/server/img/cropped.jpg", "/root/server/img/style/style3.jpg", 200, "/root/server/img/s3.jpg")
 
 	return render_template('index.html')
 
-@app.route('/img/<imgid>', methods=['GET'])
-def returnImg(imgid):
-	image = file("img/{}.jpg".format(imgid))
+@app.route('/img/<id>/<imgid>', methods=['GET'])
+def returnImg(id, imgid):
+	path = 'img/{}'.format(id)
+	path += '/{}.jpg'.format(imgid)
+	print(path)
+	image = file(path)
 	resp = Response(image, mimetype="image/jpeg")
 	return resp
 

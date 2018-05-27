@@ -1,0 +1,4 @@
+#Thu Nov 30 08:57:28 CST 2017
+base.0=D\:\\SRTP\\Style-Transfer-App-master\\StyleTransfer\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+renamed.0=classes.dex
+file.0=D\:\\SRTP\\Style-Transfer-App-master\\StyleTransfer\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11\\classes.dex
